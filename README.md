@@ -40,3 +40,41 @@ from gtts import gTTS
 import numpy as np
 
 import imutils
+
+## Step 3:- Read and image and detect the texts show as output:
+image = cv2.imread("image/Sample_image.png")
+
+## (converting image into gray scale image)
+
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+## (Converting it to binary image by Thresholding
+
+ this step is require if you have colored image because if you skip this part
+  then tesseract won't able to detect text correctly and this will give incorrect result)
+
+threshold_img = cv2.threshold(gray_image, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
+
+## (display  image)
+
+cv2.imshow('Result', image)
+
+img = Image.open('image/Sample_image.png')
+
+## (Display the image until press any key)
+
+cv2.waitKey(0)
+
+## (Detect the text from image and print it:)
+
+text = tess.image_to_string(img)
+
+print(text)
+
+## Step 4 : Make the text audible and save the audio file:
+
+audio = gTTS(text = xy, lang = 'en', slow = True)
+
+audio.save("quote3.wav")
+
+os.system("quote3.wav")

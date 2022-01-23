@@ -19,7 +19,7 @@
 
 ![AudioDet1](https://user-images.githubusercontent.com/64628178/150674502-7a51b555-70d8-452f-8d7e-1e213a29f020.PNG)
 
-#Step : 1 :- Installation and environment setup
+## Step : 1 :- Installation and environment setup
 
 Here, I’ll use Python as a programming language to complete the OCR task.Make sure we have python 3 installed in our system then we are ready to install OCR and Tesseract, use the commands mentioned below one by one:
 
@@ -27,7 +27,7 @@ pip install opencv-python
 
 pip install pytesseract
 
-#Step 2:-  import libraries in visual studio code:
+## Step 2:-  import libraries in visual studio code:
 
 import pytesseract
 
